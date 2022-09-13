@@ -12,7 +12,16 @@ window.addEventListener('DOMContentLoaded', event => {
     const subbtn=document.getElementsById("submitButton");
 
     function submitform(){
-        
+        fetch('post.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+            },
+            body: "text=" + document.querySelector("p.unbroken").innerText
+          })
+          .then(response => response.json())
+          .then(json => console.log(json));
+          
 
     }
 
