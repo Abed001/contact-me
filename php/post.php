@@ -1,13 +1,13 @@
 <?php
 include("connection.php");
 
-$name = $_POST["name"];
-$author = $_POST["author"];
+$fullname = $_POST["fullname"];
+$email = $_POST["email"];
+$phone = $_POST["phone"];
+$message = $_POST["message"];
 
-$query = "INSERT INTO articles(name, author) VALUE (" . $name .", ?)";
-
-$query = $mysqli->prepare("INSERT INTO articles(name, author) VALUE (?, ?)");
-$query->bind_param("ss", $name, $author);
+$query = $mysqli->prepare("INSERT INTO contacts_lists(fullname, email,phone,message) VALUE (?,?,?,?)");
+$query->bind_param("ss", $fullname, $email,$phone,$message);
 $query->execute();
 
 $response = [];

@@ -9,6 +9,13 @@
 
 window.addEventListener('DOMContentLoaded', event => {
 
+    const subbtn=document.getElementsById("submitButton");
+
+    function submitform(){
+        
+
+    }
+
     // Navbar shrink function
     var navbarShrink = function () {
         const navbarCollapsible = document.body.querySelector('#mainNav');
@@ -50,5 +57,5 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-
+subbtn.addEventListener('click' ,submitform);
 });
